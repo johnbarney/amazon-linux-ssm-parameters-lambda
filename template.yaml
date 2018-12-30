@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  AWS Serverless Application
+  Amazon Linux SSM Parameter Library
+
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 128
+
+Resources:
+  AmazonLinuxSsmLibraryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: amazon_linux_ssm_parameter/
+      Handler: app.lambda_handler
+      Runtime: python3.6
+      Events:
+        AmazonLinuxSsmParameter:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 day)
