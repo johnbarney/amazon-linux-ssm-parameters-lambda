@@ -5,10 +5,9 @@ A small lambda to keep an update to date SSM parameter with the latest Amazon Li
 ```bash
 .
 ├── README.md                   <-- This instructions file
-├── hello_world                 <-- Source code for a lambda function
+├── amazon_linux_ssm_parameters <-- Source code for a lambda function
 │   ├── __init__.py
-│   ├── app.py                  <-- Lambda function code
-│   └── requirements.txt        <-- Python dependencies
+│   └── app.py                  <-- Lambda function code
 ├── template.yaml               <-- SAM Template
 └── tests                       <-- Unit tests
     └── unit
